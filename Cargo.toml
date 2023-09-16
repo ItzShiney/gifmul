@@ -1,0 +1,24 @@
+[package]
+name = "gifmul"
+version = "0.1.0"
+edition = "2021"
+
+[profile.dev]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = false
+panic = 'unwind'
+incremental = false
+codegen-units = 16
+rpath = false
+
+[profile.release]
+lto = true
+panic = "abort"
+
+[dependencies]
+image = "*"
+itertools = "*"
+gif = "*"
